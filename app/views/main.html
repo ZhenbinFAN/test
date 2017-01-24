@@ -1,0 +1,14 @@
+<list-movies>
+  <a class="btn btn-default" href="#/nouveau/nouveau">Nouveau</a>
+  <input type="checkbox" ng-model="modeSuppression" /> Mode suppression
+  <hr>
+  <ul class="films">
+    <li ng-repeat="film in films" class="film">
+      <a ng-href="#/{{film.id}}">
+        <img ng-src="{{film.poster}}" alt="{{film.title}}" />
+      </a>
+      <h4 class="filmtitle">{{film.title}}</h4>
+      <supprimer film="film.id" done="refresh()" ng-if="modeSuppression">Supprimer</supprimer>
+    </li>
+  </ul>
+</list-movies>

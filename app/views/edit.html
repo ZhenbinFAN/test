@@ -1,0 +1,33 @@
+<movieedit>
+  <div class="row">
+    <div class="col-md-7">
+      <form class="form-horizontal filmedit">
+        <div class="form-group"><input type="text" class="form-control" ng-model="film.title" /></div>
+        <div class="form-group"><textarea type="text" class="form-control" rows="5" ng-model="film.synopsis" /></div>
+        <simpleform label="Année"><input type="text" class="col-sm-10 form-control" ng-model="film.releaseYear" /></simpleform>
+        <simpleform label="Catégorie"><input type="text" class="form-control" ng-model="film.category" /></simpleform>
+        <simpleform label="Dirigé par"><input type="text" class="form-control" ng-model="film.directors" /></simpleform>
+        <simpleform label="Acteurs"><input type="text" class="form-control" ng-model="film.actors" /></simpleform>
+        <simpleform label="Prix"><input type="text" class="form-control" ng-model="film.price" /></simpleform>
+        <simpleform label="Note"><input type="number" class="form-control" min="1" max="5" ng-model="film.rate" /></simpleform>
+        <simpleform label="Poster"><input type="text" class="form-control" ng-model="film.poster" /></simpleform>
+        </ul>
+        <supprimer film="film.id" done="removeDone()"></supprimer>
+        <a class="btn btn-default" ng-href="#/{{film.id}}">Annuler</a>
+        <button class="btn btn-success" ng-click="valider()" type="submit">Valider</button>
+      </form>
+    </div>
+    <div class="col-md-5">
+      <h1>{{film.title}} <stars rate="film.rate"></stars></h1>
+      <p>{{film.synopsis}}</p>
+      <ul>
+        <li>Année : {{film.releaseYear}}</li>
+        <li>Catégorie : {{film.category}}</li>
+        <li>Dirigé par {{film.directors}}</li>
+        <li>Acteurs : {{film.actors}}</li>
+        <li>Prix : {{film.price}}€</li>
+      </ul>
+      <img ng-src="{{film.poster}}" alt="{{film.title}}" width="200px" class="pull-right" />
+    </div>
+  </div>
+</movieedit>

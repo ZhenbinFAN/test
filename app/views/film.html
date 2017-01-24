@@ -1,0 +1,13 @@
+<movie>
+  <img ng-src="{{film.poster}}" alt="{{film.title}}" width="200px" class="pull-right" />
+  <h1>{{film.title | toUpper}} <stars rate="film.rate"></stars></h1>
+  <p>{{film.synopsis}}</p>
+  <ul>
+    <li>Année : {{film.releaseYear}}</li>
+    <li>Catégorie : {{film.category}}</li>
+    <li>Dirigé par {{film.directors}}</li>
+    <li>Acteurs : {{film.actors}}</li>
+    <li>Prix : {{film.price}}€</li>
+  </ul>
+  <a class="btn btn-default" ng-href="#/edit/{{film.id}}">Editer</a>
+</movie>
